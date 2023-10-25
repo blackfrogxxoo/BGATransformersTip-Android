@@ -290,7 +290,9 @@ public abstract class TransformersTip extends PopupWindow implements PopupWindow
             mAnchorView.post(new Runnable() {
                 @Override
                 public void run() {
-                    showAsDropDownInternal();
+                    if (mAnchorView.getDisplay() != null) {
+                        showAsDropDownInternal();
+                    }
                 }
             });
         } else {
